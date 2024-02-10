@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Reviews</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #bookReviews {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .book {
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Book Reviews</h1>
+
+<div id="bookReviews"></div>
+
+<script>
+    // Sample book reviews data
+    const bookReviews = [
+        { title: "MATILDA", author: "Roald Dahl", review: "A perfect blend of humor, fantasy, and a strong story about the power of kindness." },
+        { title: "The BFG", author: "Roald Dahl", review: " The story is filled with wonder, humor, and whimsical charma." },
+        { title: "Bridge to Terabithia", author: "Katherine Paterson", review: "A story that explores the power of friendship and imagination." }
+    ];
+
+    // Function to display book reviews
+    function displayBookReviews() {
+        const bookReviewsContainer = document.getElementById("bookReviews");
+
+        bookReviews.forEach(review => {
+            const bookDiv = document.createElement("div");
+            bookDiv.classList.add("book");
+            bookDiv.innerHTML = `<h3>${review.title}</h3>
+                                 <p>Author: ${review.author}</p>
+                                 <p>Review: ${review.review}</p>`;
+            bookReviewsContainer.appendChild(bookDiv);
+        });
+    }
+
+    // Initial display of book reviews
+    displayBookReviews();
+</script>
+
+</body>
+</html>
